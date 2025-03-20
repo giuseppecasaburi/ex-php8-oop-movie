@@ -11,7 +11,7 @@ class Movie {
     public $genre;
 
     // Costruttore
-    function __construct(string $_film_name, string $_director_name, int $_personal_vote, Genre $_genre) {
+    public function __construct(string $_film_name, string $_director_name, int $_personal_vote, Genre $_genre) {
         $this->film_name = $_film_name;
         $this->director_name = $_director_name;
         $this->personal_vote = $_personal_vote;
@@ -20,11 +20,13 @@ class Movie {
 
     // Metodi
     public function getFilm($nome_film) {
+
+        // implode accetta un carattere o valore da intervallare tra un elemento e un altro di un array e poi l'array da convertire in stringa e restituisce una stringa
+        $array_to_string = implode(", ", $this->genre->genre);
+
         echo $nome_film->film_name ."<br>";
         echo $nome_film->director_name ."<br>";
         echo $nome_film->personal_vote ."<br>";
-        
-        // "$genre" in questa classe non è un'istanza ma una oggetto e quindi bisogna prima accedere all'oggetto "genre" e poi all'istanza "genre"
-        echo $nome_film->genre->genre; 
+        echo $array_to_string;
     }
 }
