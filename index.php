@@ -1,8 +1,8 @@
 <?php
 require_once "./models/Movie.php";
 
-$shutter_island = new Movie("Shutter Island", "Martin Scorsese", 4, new Genre(["Thriller psicologico", "Poliziesco"]));
-$inception = new Movie("Inception", "Christopher Nolan", 5, new Genre(["Thriller psicologico", "Drammatico"]) );
+$shutter_island = new Movie("Shutter Island", "Martin Scorsese", 3, new Genre(["Thriller psicologico", "Poliziesco"]));
+$inception = new Movie("Inception", "Christopher Nolan", 5, new Genre(["Thriller psicologico", "Drammatico"]));
 var_dump($shutter_island->genre);
 ?>
 

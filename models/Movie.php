@@ -1,20 +1,22 @@
 <?php
+require_once "./traits/Vote.php";
 require_once "./models/Genre.php";
 
 // Classe movie
 class Movie {
 
+    use Vote;
+
     // Variabili di istanza
     public $film_name;
     public $director_name;
-    public $personal_vote;
-    public $genre;
+    public $genre;  
 
     // Costruttore
     public function __construct(string $_film_name, string $_director_name, int $_personal_vote, Genre $_genre) {
         $this->film_name = $_film_name;
         $this->director_name = $_director_name;
-        $this->personal_vote = $_personal_vote;
+        $this->setVote($_personal_vote);
         $this->genre = $_genre;
     }
 
@@ -26,7 +28,7 @@ class Movie {
 
         echo $nome_film->film_name ."<br>";
         echo $nome_film->director_name ."<br>";
-        echo $nome_film->personal_vote ."<br>";
+        echo "Voto: " . $nome_film->getVote() ."<br>";
         echo $array_to_string;
     }
 }
