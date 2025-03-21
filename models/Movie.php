@@ -16,7 +16,7 @@ class Movie {
     public function __construct(string $_film_name, string $_director_name, int $_personal_vote, Genre $_genre) {
         $this->film_name = $_film_name;
         $this->director_name = $_director_name;
-        $this->setVote($_personal_vote);
+        $this->setVote($_personal_vote, $_film_name);
         $this->genre = $_genre;
     }
 
